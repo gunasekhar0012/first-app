@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Gunasekhar — Next-Gen Lifestyle & Tech</title>
+    <title>Lumina — Next-Gen Lifestyle & Tech</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -716,7 +716,7 @@
         <div class="container header-inner">
             <a class="brand" href="#">
                 <div class="brand-icon"><i class="fas fa-sparkles"></i></div>
-                <span class="brand-name">Gunasekhar</span>
+                <span class="brand-name">Lumina</span>
             </a>
 
             <nav class="main-nav" aria-label="Store Sections">
