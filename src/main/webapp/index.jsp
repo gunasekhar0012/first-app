@@ -3,32 +3,30 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>NEXUS Premium Everyday Artifacts</title>
+    <title>AURA — Precision Hardware & Objects</title>
 
-    <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
         :root {
-            --bg: #0b0d13;
-            --surface: #121620;
-            --surface-subtle: #19202e;
+            --bg: #08090c;
+            --surface: #101217;
+            --surface-elevated: #171a22;
+            --surface-hover: #1f232e;
             --border: rgba(255, 255, 255, 0.08);
-            --border-hover: rgba(255, 255, 255, 0.2);
-            --primary: #ffffff;
-            --primary-invert: #0b0d13;
-            --muted: #8c96a8;
-            --accent: #6366f1;
-            --accent-glow: rgba(99, 102, 241, 0.25);
-            --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            --border-strong: rgba(255, 255, 255, 0.16);
+            --text: #f3f4f6;
+            --text-muted: #8b92a2;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.2);
             --radius-sm: 8px;
-            --radius-md: 16px;
-            --radius-lg: 24px;
-            --container: 1260px;
-            --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+            --radius-md: 14px;
+            --radius-lg: 22px;
+            --container: 1280px;
+            --transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -37,41 +35,44 @@
         body {
             font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
             background: var(--bg);
-            color: #f1f5f9;
+            color: var(--text);
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, .brand-font {
-            font-family: 'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif;
-        }
-
+        .mono { font-family: 'Space Grotesk', monospace; }
         a { color: inherit; text-decoration: none; }
-        .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+        .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 28px; }
 
         /* Top Announcement */
-        .top-banner {
-            background: linear-gradient(90deg, #4f46e5, #7c3aed, #db2777);
-            color: #fff;
-            padding: 8px 16px;
-            font-size: 13px;
-            font-weight: 600;
-            text-align: center;
+        .ribbon {
+            background: #0f1118;
+            border-bottom: 1px solid var(--border);
+            padding: 10px 20px;
+            font-size: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
+            letter-spacing: 0.02em;
         }
-        .top-banner span { background: rgba(255, 255, 255, 0.2); padding: 2px 8px; border-radius: 999px; font-size: 11px; }
+        .ribbon-tag {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 10px;
+        }
 
-        /* Navigation Header */
+        /* Header */
         header {
             position: sticky;
             top: 0;
-            z-index: 60;
-            background: rgba(11, 13, 19, 0.82);
-            backdrop-filter: blur(16px);
+            z-index: 50;
+            background: rgba(8, 9, 12, 0.75);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
         }
 
@@ -79,88 +80,89 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 24px;
-            height: 74px;
+            height: 76px;
+            gap: 20px;
         }
 
         .brand {
-            font-size: 24px;
-            font-weight: 900;
-            letter-spacing: -0.04em;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 21px;
+            letter-spacing: -0.04em;
         }
 
-        .brand-icon {
-            width: 28px;
-            height: 28px;
-            border-radius: 8px;
-            background: var(--accent-gradient);
-            display: grid;
-            place-items: center;
-            font-size: 14px;
-            color: #fff;
+        .brand-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            background: #fff;
+            transform: rotate(45deg);
         }
 
         nav.main-nav ul {
             display: flex;
-            gap: 8px;
+            gap: 4px;
             list-style: none;
         }
 
         nav.main-nav a {
             padding: 8px 16px;
-            border-radius: 999px;
-            font-size: 14px;
+            border-radius: var(--radius-sm);
+            font-size: 13px;
             font-weight: 600;
-            color: var(--muted);
+            color: var(--text-muted);
             transition: var(--transition);
         }
 
         nav.main-nav a:hover {
             color: #fff;
-            background: var(--surface-subtle);
+            background: var(--surface);
         }
 
-        .search-box {
-            position: relative;
+        .search-container {
             display: flex;
             align-items: center;
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 999px;
             padding: 0 16px;
-            width: 280px;
+            width: 260px;
             transition: var(--transition);
         }
 
-        .search-box:focus-within {
-            border-color: var(--accent);
+        .search-container:focus-within {
+            border-color: var(--border-strong);
             box-shadow: 0 0 0 3px var(--accent-glow);
+            width: 300px;
         }
 
-        .search-box input {
-            border: 0;
+        .search-container input {
+            border: none;
             background: transparent;
+            color: #fff;
             outline: none;
             width: 100%;
             padding: 10px 0;
             font-size: 13px;
-            color: #fff;
             font-family: inherit;
         }
 
-        .search-box i { color: var(--muted); margin-right: 10px; font-size: 13px; }
+        .search-container i {
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-right: 10px;
+        }
 
-        .header-actions { display: flex; align-items: center; gap: 10px; }
+        .header-actions { display: flex; align-items: center; gap: 8px; }
 
-        .action-btn {
+        .btn-icon {
             background: var(--surface);
             border: 1px solid var(--border);
-            color: #fff;
-            width: 42px;
-            height: 42px;
+            color: var(--text-muted);
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: grid;
             place-items: center;
@@ -168,21 +170,16 @@
             transition: var(--transition);
         }
 
-        .action-btn:hover {
-            border-color: var(--border-hover);
-            background: var(--surface-subtle);
-            transform: translateY(-1px);
-        }
+        .btn-icon:hover { color: #fff; border-color: var(--border-strong); }
 
-        .cart-toggle-btn {
-            position: relative;
+        .btn-cart {
             background: #fff;
-            color: #0b0d13;
-            border: 0;
-            padding: 10px 18px;
+            color: #000;
+            border: none;
+            padding: 9px 16px;
             border-radius: 999px;
-            font-weight: 700;
             font-size: 13px;
+            font-weight: 700;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -190,198 +187,205 @@
             transition: var(--transition);
         }
 
-        .cart-toggle-btn:hover {
-            background: #e2e8f0;
+        .btn-cart:hover {
+            background: #e5e7eb;
             transform: translateY(-1px);
         }
 
-        .cart-badge {
-            background: var(--accent);
+        .cart-count {
+            background: #000;
             color: #fff;
-            font-size: 11px;
-            border-radius: 999px;
-            padding: 2px 7px;
+            font-size: 10px;
             font-weight: 800;
+            padding: 2px 7px;
+            border-radius: 999px;
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            position: relative;
-            padding: 48px 0 64px;
+            padding: 56px 0 72px;
         }
 
-        .hero-banner {
-            position: relative;
-            border-radius: var(--radius-lg);
-            background: radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.25), transparent 45%),
-                        radial-gradient(circle at 20% 80%, rgba(236, 72, 153, 0.15), transparent 50%),
-                        var(--surface);
-            border: 1px solid var(--border);
-            padding: 64px 54px;
-            overflow: hidden;
+        .hero-bento {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            align-items: center;
-            gap: 40px;
+            grid-template-columns: 1.35fr 0.65fr;
+            gap: 20px;
         }
 
-        .hero-banner::after {
-            content: '';
+        .hero-main {
+            position: relative;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 64px 56px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 520px;
+        }
+
+        .hero-bg-media {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
-            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.45;
+            filter: grayscale(20%);
+            transition: transform 1.2s ease;
+        }
+
+        .hero-main:hover .hero-bg-media { transform: scale(1.03); }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(16, 18, 23, 0.2) 0%, rgba(16, 18, 23, 0.95) 85%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 580px;
         }
 
         .hero-tag {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 6px 14px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 999px;
-            font-size: 12px;
+            gap: 6px;
+            font-size: 11px;
             font-weight: 700;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: #cbd5e1;
-            margin-bottom: 24px;
+            color: #93c5fd;
+            margin-bottom: 14px;
         }
-
-        .hero-tag i { color: #f43f5e; }
 
         .hero h1 {
-            font-size: 56px;
-            line-height: 1.08;
-            font-weight: 900;
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.05;
             letter-spacing: -0.04em;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span.gradient-text {
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
         }
 
         .hero p {
-            color: var(--muted);
-            font-size: 16px;
-            margin-bottom: 36px;
-            max-width: 480px;
+            color: var(--text-muted);
+            font-size: 15px;
             line-height: 1.6;
+            margin-bottom: 28px;
         }
 
-        .hero-cta { display: flex; align-items: center; gap: 14px; }
+        .hero-side {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .side-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .side-card:hover {
+            border-color: var(--border-strong);
+            transform: translateY(-2px);
+        }
+
+        .side-card img {
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .side-card:hover img {
+            opacity: 1;
+            transform: scale(1.05);
+        }
 
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 13px 24px;
+            padding: 13px 26px;
             border-radius: 999px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
             cursor: pointer;
-            border: 0;
+            border: none;
             transition: var(--transition);
         }
 
-        .btn-glow {
+        .btn-white {
             background: #fff;
-            color: #0b0d13;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+            color: #000;
         }
+        .btn-white:hover { background: #e5e7eb; }
 
-        .btn-glow:hover {
-            transform: translateY(-2px);
-            background: #f8fafc;
-            box-shadow: 0 0 35px rgba(255, 255, 255, 0.4);
-        }
-
-        .btn-outline {
-            background: rgba(255, 255, 255, 0.04);
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
             color: #fff;
             border: 1px solid var(--border);
         }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.14); }
 
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: var(--border-hover);
-        }
-
-        .hero-showcase {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-showcase img {
-            width: 100%;
-            max-height: 380px;
-            object-fit: cover;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-        }
-
-        /* Category Filter Bar */
-        .section-header {
+        /* Filter Controls */
+        .filter-wrapper {
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 24px;
+            align-items: center;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+            gap: 16px;
         }
 
-        .section-header h2 {
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-        }
-
-        .section-header p {
-            color: var(--muted);
-            font-size: 14px;
-            margin-top: 4px;
-        }
-
-        .filter-row {
+        .filter-pills {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             overflow-x: auto;
-            padding-bottom: 8px;
-            margin-bottom: 32px;
             scrollbar-width: none;
         }
-        .filter-row::-webkit-scrollbar { display: none; }
 
-        .filter-chip {
+        .filter-btn {
             background: var(--surface);
             border: 1px solid var(--border);
-            color: var(--muted);
+            color: var(--text-muted);
             padding: 9px 18px;
             border-radius: 999px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
-            white-space: nowrap;
             cursor: pointer;
             transition: var(--transition);
+            white-space: nowrap;
         }
 
-        .filter-chip:hover, .filter-chip.active {
+        .filter-btn.active, .filter-btn:hover {
             background: #fff;
-            color: #0b0d13;
+            color: #000;
             border-color: #fff;
-            transform: translateY(-1px);
         }
 
         /* Products Grid */
-        .products-grid {
+        .product-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-            margin-bottom: 64px;
+            gap: 24px;
+            margin-bottom: 80px;
         }
 
         .product-card {
@@ -391,84 +395,61 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: var(--transition);
             position: relative;
+            transition: var(--transition);
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--border-hover);
-            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5);
+            border-color: var(--border-strong);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
-        .product-image-container {
+        .product-media {
             position: relative;
-            padding-top: 85%;
-            background: #0f1219;
+            width: 100%;
+            height: 280px;
+            background: #0d0f14;
             overflow: hidden;
         }
 
-        .product-image-container img {
-            position: absolute;
-            inset: 0;
+        .product-media img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .product-card:hover .product-image-container img {
+        .product-card:hover .product-media img {
             transform: scale(1.06);
         }
 
-        .product-tag {
+        .product-badge {
             position: absolute;
-            top: 12px;
-            left: 12px;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
+            top: 14px;
+            left: 14px;
+            background: rgba(8, 9, 12, 0.85);
             backdrop-filter: blur(8px);
-            z-index: 2;
-        }
-
-        .tag-dark { background: rgba(11, 13, 19, 0.85); color: #fff; border: 1px solid var(--border); }
-        .tag-accent { background: var(--accent); color: #fff; }
-
-        .fav-btn {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            width: 32px;
-            height: 32px;
-            background: rgba(11, 13, 19, 0.7);
-            backdrop-filter: blur(6px);
             border: 1px solid var(--border);
-            border-radius: 50%;
             color: #fff;
-            display: grid;
-            place-items: center;
-            cursor: pointer;
-            z-index: 2;
-            transition: var(--transition);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
         }
 
-        .fav-btn:hover { color: #f43f5e; border-color: #f43f5e; }
-
-        .product-info {
-            padding: 18px;
+        .product-details {
+            padding: 20px;
             display: flex;
             flex-direction: column;
             flex: 1;
         }
 
-        .category-name {
+        .product-cat {
             font-size: 11px;
             font-weight: 700;
-            color: var(--muted);
+            color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-bottom: 4px;
@@ -477,21 +458,9 @@
         .product-title {
             font-size: 16px;
             font-weight: 700;
-            color: #fff;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             line-height: 1.35;
         }
-
-        .product-rating {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 12px;
-            color: #f59e0b;
-            margin-bottom: 16px;
-        }
-
-        .product-rating span { color: var(--muted); font-size: 12px; }
 
         .product-footer {
             margin-top: auto;
@@ -502,85 +471,71 @@
             border-top: 1px solid var(--border);
         }
 
-        .price-col { display: flex; flex-direction: column; }
-        .price-now { font-size: 19px; font-weight: 800; color: #fff; }
-        .price-then { font-size: 12px; color: var(--muted); text-decoration: line-through; }
-
-        .add-cart-btn {
-            background: var(--surface-subtle);
-            color: #fff;
-            border: 1px solid var(--border);
-            padding: 8px 14px;
-            border-radius: 999px;
-            font-size: 13px;
+        .product-price {
+            font-size: 17px;
             font-weight: 700;
+        }
+
+        .btn-add {
+            background: var(--surface-elevated);
+            border: 1px solid var(--border);
+            color: #fff;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
             transition: var(--transition);
         }
 
-        .add-cart-btn:hover {
+        .btn-add:hover {
             background: #fff;
-            color: #0b0d13;
+            color: #000;
             border-color: #fff;
         }
 
-        /* Deal Section */
-        .deal-container {
+        /* Split Feature Section */
+        .spotlight {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
             overflow: hidden;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            margin-bottom: 72px;
+            margin-bottom: 80px;
         }
 
-        .deal-img { position: relative; min-height: 340px; }
-        .deal-img img { width: 100%; height: 100%; object-fit: cover; }
+        .spotlight-media img {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            object-fit: cover;
+            display: block;
+        }
 
-        .deal-details {
+        .spotlight-info {
             padding: 56px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .countdown-boxes {
-            display: flex;
-            gap: 12px;
-            margin: 24px 0;
-        }
-
-        .c-box {
-            background: var(--surface-subtle);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 12px;
-            min-width: 68px;
-            text-align: center;
-        }
-
-        .c-box .num { font-size: 22px; font-weight: 900; color: #fff; }
-        .c-box .lbl { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; }
-
-        /* Slide-over Cart Drawer */
-        .cart-overlay {
+        /* Cart Drawer */
+        .drawer-overlay {
             position: fixed;
             inset: 0;
             background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(6px);
+            backdrop-filter: blur(8px);
             z-index: 90;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease;
         }
 
-        .cart-overlay.active { opacity: 1; pointer-events: auto; }
+        .drawer-overlay.open { opacity: 1; pointer-events: auto; }
 
-        .cart-drawer {
+        .drawer {
             position: fixed;
             top: 0;
             right: 0;
@@ -594,20 +549,20 @@
             transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
-            padding: 24px;
+            padding: 28px;
         }
 
-        .cart-drawer.active { transform: translateX(0); }
+        .drawer.open { transform: translateX(0); }
 
-        .cart-header {
+        .drawer-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-bottom: 18px;
+            padding-bottom: 20px;
             border-bottom: 1px solid var(--border);
         }
 
-        .cart-items-list {
+        .drawer-items {
             flex: 1;
             overflow-y: auto;
             padding: 20px 0;
@@ -616,32 +571,49 @@
             gap: 16px;
         }
 
-        .cart-item {
+        .cart-row {
             display: flex;
             gap: 14px;
             align-items: center;
-            background: var(--surface-subtle);
+            background: var(--surface-elevated);
             padding: 12px;
             border-radius: var(--radius-sm);
             border: 1px solid var(--border);
         }
 
-        .cart-item img {
-            width: 56px;
-            height: 56px;
+        .cart-row img {
+            width: 60px;
+            height: 60px;
             border-radius: 6px;
             object-fit: cover;
         }
 
-        .cart-item-title { font-size: 14px; font-weight: 700; color: #fff; }
-        .cart-item-price { font-size: 13px; color: var(--muted); }
+        .cart-qty-ctrl {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 6px;
+            font-size: 12px;
+        }
 
-        .cart-total-box {
+        .qty-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            width: 22px;
+            height: 22px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+        }
+
+        .drawer-footer {
             border-top: 1px solid var(--border);
             padding-top: 20px;
         }
 
-        .total-row {
+        .total-box {
             display: flex;
             justify-content: space-between;
             font-size: 16px;
@@ -652,73 +624,89 @@
         /* Footer */
         footer {
             border-top: 1px solid var(--border);
+            padding: 56px 0 32px;
             background: var(--surface);
-            padding: 48px 0 24px;
         }
 
-        .footer-wrap {
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .footer-col ul {
+            list-style: none;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--text-muted);
         }
 
-        /* Responsive Breakpoints */
+        .footer-col a:hover { color: #fff; }
+
         @media (max-width: 1024px) {
-            .hero-banner { grid-template-columns: 1fr; padding: 44px; }
-            .hero-showcase { display: none; }
-            .products-grid { grid-template-columns: repeat(3, 1fr); }
-            .deal-container { grid-template-columns: 1fr; }
-            .deal-img { height: 260px; }
+            .hero-bento { grid-template-columns: 1fr; }
+            .product-grid { grid-template-columns: repeat(3, 1fr); }
+            .spotlight { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
-            nav.main-nav, .search-box { display: none; }
-            .products-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+            nav.main-nav, .search-container { display: none; }
+            .product-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
             .hero h1 { font-size: 38px; }
+            .footer-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 480px) {
-            .products-grid { grid-template-columns: 1fr; }
+            .product-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 
 <body>
-    <!-- Top Announcement Bar -->
-    <div class="top-banner">
-        <span>EXCLUSIVE</span>
-        Flash Sale: Enjoy complimentary worldwide priority shipping on orders over $150
+    <!-- Top Announcement -->
+    <div class="ribbon">
+        <span class="ribbon-tag">DISPATCH</span>
+        Complimentary global priority courier shipping on all orders over $200.
     </div>
 
     <!-- Navigation Header -->
     <header>
         <div class="container header-inner">
-            <a class="brand brand-font" href="#">
-                <div class="brand-icon"><i class="fas fa-bolt"></i></div>
-                <span>NEXUS</span>
+            <a class="brand" href="#">
+                <span class="brand-dot"></span>
+                <span>AURA</span>
             </a>
 
-            <nav class="main-nav" aria-label="Main Navigation">
+            <nav class="main-nav" aria-label="Global Store">
                 <ul>
                     <li><a href="#">Showroom</a></li>
-                    <li><a href="#products">Catalog</a></li>
-                    <li><a href="#deals">Deals</a></li>
+                    <li><a href="#catalog">Collection</a></li>
+                    <li><a href="#spotlight">Spotlight</a></li>
                 </ul>
             </nav>
 
-            <div class="search-box">
+            <div class="search-container">
                 <i class="fas fa-search"></i>
-                <input type="search" id="productSearch" placeholder="Search by title, tag..." />
+                <input type="search" id="searchInput" placeholder="Search devices, audio..." />
             </div>
 
             <div class="header-actions">
-                <button class="action-btn" aria-label="Account"><i class="far fa-user"></i></button>
-                <button class="cart-toggle-btn" id="openCartBtn">
-                    <i class="fas fa-bag-shopping"></i>
+                <button class="btn-icon" aria-label="Account"><i class="far fa-user"></i></button>
+                <button class="btn-cart" id="openDrawerBtn">
+                    <i class="fas fa-shopping-bag"></i>
                     <span>Bag</span>
-                    <span class="cart-badge" id="cartCountBadge">0</span>
+                    <span class="cart-count" id="cartCounter">0</span>
                 </button>
             </div>
         </div>
@@ -727,247 +715,263 @@
     <main>
         <!-- Hero Section -->
         <section class="hero container">
-            <div class="hero-banner">
-                <div>
-                    <div class="hero-tag">
-                        <i class="fas fa-fire"></i> Series 2026 Collection
-                    </div>
-                    <h1>Refined Hardware for <span class="gradient-text">Modern Creators</span></h1>
-                    <p>Designed with aerospace-grade aluminum, custom silicon integration, and a focus on essential tactile usability.</p>
-                    <div class="hero-cta">
-                        <button class="btn btn-glow" id="heroShopBtn">Explore Collection <i class="fas fa-arrow-right"></i></button>
-                        <a href="#deals" class="btn btn-outline">View Offers</a>
+            <div class="hero-bento">
+                <div class="hero-main">
+                    <img class="hero-bg-media" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80" alt="Studio Headphones Ambient" />
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <span class="hero-tag mono"><i class="fas fa-circle" style="font-size: 7px; color: #3b82f6;"></i> Generation 04 Flagship</span>
+                        <h1>Studio Sound. Zero Compromise.</h1>
+                        <p>CNC-machined aluminum housings, custom 40mm bio-cellulose drivers, and seamless spatial acoustic calibration.</p>
+                        <div style="display: flex; gap: 12px;">
+                            <button class="btn btn-white" id="heroScrollBtn">Explore Catalog <i class="fas fa-arrow-right"></i></button>
+                            <a href="#spotlight" class="btn btn-secondary">Learn More</a>
+                        </div>
                     </div>
                 </div>
-                <div class="hero-showcase">
-                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80" alt="MacBook Showcase" />
+
+                <div class="hero-side">
+                    <div class="side-card">
+                        <div>
+                            <span class="mono" style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Acoustic Gear</span>
+                            <h3 style="font-size: 20px; font-weight: 700; margin-top: 4px;">Wireless Audio</h3>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=400&q=80" alt="Earbuds" />
+                    </div>
+                    <div class="side-card">
+                        <div>
+                            <span class="mono" style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Everyday Carry</span>
+                            <h3 style="font-size: 20px; font-weight: 700; margin-top: 4px;">Timepieces</h3>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=400&q=80" alt="Modern Watch" />
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Product Department & Filter -->
-        <section id="products" class="container">
-            <div class="section-header">
+        <!-- Product Catalog -->
+        <section id="catalog" class="container">
+            <div class="filter-wrapper">
                 <div>
-                    <h2>Curated Catalog</h2>
-                    <p>Select a category or browse all verified gear</p>
+                    <h2 style="font-size: 28px; font-weight: 800; letter-spacing: -0.03em;">The Hardware Lineup</h2>
+                    <p style="color: var(--text-muted); font-size: 14px;">Select department to filter inventory</p>
+                </div>
+                <div class="filter-pills" id="filterContainer">
+                    <button class="filter-btn active" data-filter="all">All Models</button>
+                    <button class="filter-btn" data-filter="audio">Audio &amp; Sound</button>
+                    <button class="filter-btn" data-filter="workspace">Workspace</button>
+                    <button class="filter-btn" data-filter="optics">Photography</button>
+                    <button class="filter-btn" data-filter="carry">Carry &amp; Wear</button>
                 </div>
             </div>
 
-            <div class="filter-row" id="filterRow">
-                <button class="filter-chip active" data-filter="all">All Catalog</button>
-                <button class="filter-chip" data-filter="gadgets">Audio &amp; Cameras</button>
-                <button class="filter-chip" data-filter="laptops">Computing</button>
-                <button class="filter-chip" data-filter="phones">Smartphones</button>
-                <button class="filter-chip" data-filter="accessories">Accessories</button>
-            </div>
-
-            <!-- Products Grid Container -->
-            <div class="products-grid" id="productsGrid"></div>
+            <div class="product-grid" id="productContainer"></div>
         </section>
 
-        <!-- Flash Deal Section -->
-        <section id="deals" class="container">
-            <div class="deal-container">
-                <div class="deal-img">
-                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=900&q=80" alt="Laptop deal preview" />
+        <!-- Spotlight Section -->
+        <section id="spotlight" class="container">
+            <div class="spotlight">
+                <div class="spotlight-media">
+                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80" alt="Workspace display" />
                 </div>
-                <div class="deal-details">
-                    <span style="color:#f43f5e; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.05em;">Limited Stock Availability</span>
-                    <h2 style="font-size:32px; font-weight:800; margin:8px 0 12px;">MacBook Pro 14" M3 Pro</h2>
-                    <p style="color:var(--muted); font-size:14px; line-height:1.6;">Precision-engineered liquid retina XDR screen, 18-core GPU performance, and 22 hours continuous battery endurance.</p>
-
-                    <div class="countdown-boxes">
-                        <div class="c-box"><div class="num" id="dDay">01</div><div class="lbl">Days</div></div>
-                        <div class="c-box"><div class="num" id="dHour">11</div><div class="lbl">Hours</div></div>
-                        <div class="c-box"><div class="num" id="dMin">40</div><div class="lbl">Mins</div></div>
-                        <div class="c-box"><div class="num" id="dSec">22</div><div class="lbl">Secs</div></div>
-                    </div>
-
-                    <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:28px;">
-                        <span style="font-size:32px; font-weight:900; color:#fff;">$1,799</span>
-                        <span style="font-size:16px; color:var(--muted); text-decoration:line-through;">$1,999</span>
-                    </div>
-
-                    <button class="btn btn-glow" id="dealBuyBtn" style="width:fit-content;">Claim Promotion</button>
+                <div class="spotlight-info">
+                    <span class="mono" style="font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase;">Workspace Architecture</span>
+                    <h2 style="font-size: 34px; font-weight: 800; margin: 8px 0 16px; line-height: 1.15;">Engineered for Flow State Productivity</h2>
+                    <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 28px; line-height: 1.6;">Our desk pads, monitor arms, and aluminum stands are designed from ground-up tolerances to reduce physical strain and declutter your primary surface.</p>
+                    <button class="btn btn-white" style="width: fit-content;" onclick="addToBag(3)">Add Setup Bundle ($210)</button>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Side Slide-Over Cart Drawer -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
-        <div class="cart-header">
-            <h3 style="font-size:18px; font-weight:800;">Your Cart</h3>
-            <button class="action-btn" id="closeCartBtn" style="width:36px; height:36px;"><i class="fas fa-times"></i></button>
+    <!-- Side Cart Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="drawer" id="cartDrawer" aria-label="Shopping Bag">
+        <div class="drawer-header">
+            <h3 style="font-size: 18px; font-weight: 800;">Shopping Bag</h3>
+            <button class="btn-icon" id="closeDrawerBtn" style="width: 34px; height: 34px;"><i class="fas fa-times"></i></button>
         </div>
-        <div class="cart-items-list" id="cartItemsList">
-            <p style="color:var(--muted); font-size:14px; text-align:center; margin-top:40px;">Your bag is currently empty.</p>
+        <div class="drawer-items" id="drawerItems">
+            <p style="color: var(--text-muted); font-size: 14px; text-align: center; margin-top: 48px;">Your bag is currently empty.</p>
         </div>
-        <div class="cart-total-box">
-            <div class="total-row">
-                <span>Total Amount:</span>
-                <span id="cartTotalSum">$0.00</span>
+        <div class="drawer-footer">
+            <div class="total-box">
+                <span>Subtotal:</span>
+                <span id="subtotalVal" class="mono">$0.00</span>
             </div>
-            <button class="btn btn-glow" style="width:100%; justify-content:center;" onclick="alert('Proceeding to encrypted checkout...')">Proceed to Checkout</button>
+            <button class="btn btn-white" style="width: 100%; justify-content: center;" onclick="alert('Proceeding to checkout...')">Proceed to Checkout</button>
         </div>
     </aside>
 
     <!-- Footer -->
     <footer>
-        <div class="container footer-wrap">
-            <div class="brand brand-font">
-                <div class="brand-icon"><i class="fas fa-bolt"></i></div>
-                <span>NEXUS</span>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="brand" style="margin-bottom: 12px;"><span class="brand-dot"></span><span>AURA</span></div>
+                    <p style="color: var(--text-muted); font-size: 13px; max-width: 320px;">Industrial hardware, audio gear, and functional everyday tools crafted for precision performance.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="#">Audio Components</a></li>
+                        <li><a href="#">Workspace Systems</a></li>
+                        <li><a href="#">Optical Precision</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Tracking Portal</a></li>
+                        <li><a href="#">Warranty Documentation</a></li>
+                        <li><a href="#">Global Concierge</a></li>
+                    </ul>
+                </div>
             </div>
-            <p style="color:var(--muted); font-size:13px;">© <span id="yearVal"></span> Nexus Platforms Inc. Crafted for exceptional performance.</p>
+            <div style="border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted);">
+                <span>© <span id="yearSpan"></span> AURA Labs Ltd.</span>
+                <span>Crafted with intentional minimalism.</span>
+            </div>
         </div>
     </footer>
 
-    <!-- JavaScript Interactions -->
     <script>
         const PRODUCTS = [
-            { id: 1, title: 'iPhone 15 Pro Max', price: 1199, oldPrice: 1299, rating: 5, reviews: 142, badge: 'New', img: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=600&q=80', category: 'phones' },
-            { id: 2, title: 'MacBook Pro 14" M3', price: 1999, oldPrice: null, rating: 5, reviews: 94, badge: null, img: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=600&q=80', category: 'laptops' },
-            { id: 3, title: 'Apple Watch Ultra 2', price: 799, oldPrice: 849, rating: 5, reviews: 204, badge: 'Sale', img: 'https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?auto=format&fit=crop&w=600&q=80', category: 'accessories' },
-            { id: 4, title: 'Sony Alpha A7 IV', price: 2499, oldPrice: null, rating: 4.9, reviews: 52, badge: null, img: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80', category: 'gadgets' },
-            { id: 5, title: 'Minimalist Travel Pack', price: 129, oldPrice: 159, rating: 4.8, reviews: 63, badge: '-20%', img: 'https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=600&q=80', category: 'accessories' },
-            { id: 6, title: 'Sony WH-1000XM5 ANC', price: 399, oldPrice: null, rating: 5, reviews: 184, badge: 'Hot', img: 'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=600&q=80', category: 'gadgets' },
-            { id: 7, title: 'Studio Mechanical Keyboard', price: 210, oldPrice: 240, rating: 4.7, reviews: 39, badge: null, img: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80', category: 'accessories' },
-            { id: 8, title: 'iPad Pro 12.9 M2', price: 1099, oldPrice: null, rating: 4.9, reviews: 110, badge: 'Popular', img: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=600&q=80', category: 'laptops' }
+            { id: 1, title: 'AURA Studio Master Over-Ear', price: 349, category: 'audio', badge: 'Flagship', img: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=600&q=80' },
+            { id: 2, title: 'Minimalist Mechanical Keyboard 75%', price: 189, category: 'workspace', badge: 'Hot', img: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80' },
+            { id: 3, title: 'Matte Aluminum Laptop Stand', price: 79, category: 'workspace', badge: null, img: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=600&q=80' },
+            { id: 4, title: 'Leica Minimalist 35mm Compact', price: 1850, category: 'optics', badge: 'Limited', img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80' },
+            { id: 5, title: 'True Wireless Noise-Cancelling Pods', price: 179, category: 'audio', badge: null, img: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80' },
+            { id: 6, title: 'Waterproof Roll-top Daypack 22L', price: 145, category: 'carry', badge: null, img: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80' },
+            { id: 7, title: 'Automatic Bauhaus Steel Timepiece', price: 420, category: 'carry', badge: 'Sale', img: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=600&q=80' },
+            { id: 8, title: 'Desk Mat — Merino Wool Felt', price: 55, category: 'workspace', badge: null, img: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=600&q=80' }
         ];
 
         let cart = [];
-        const productsGrid = document.getElementById('productsGrid');
-        const cartBadge = document.getElementById('cartCountBadge');
+        const productContainer = document.getElementById('productContainer');
+        const cartCounter = document.getElementById('cartCounter');
         const cartDrawer = document.getElementById('cartDrawer');
-        const cartOverlay = document.getElementById('cartOverlay');
-        const cartItemsList = document.getElementById('cartItemsList');
-        const cartTotalSum = document.getElementById('cartTotalSum');
+        const drawerOverlay = document.getElementById('drawerOverlay');
+        const drawerItems = document.getElementById('drawerItems');
+        const subtotalVal = document.getElementById('subtotalVal');
 
-        // Render Cards
-        function displayProducts(items) {
-            productsGrid.innerHTML = '';
+        function renderProducts(items) {
+            productContainer.innerHTML = '';
             items.forEach(p => {
-                const card = document.createElement('article');
-                card.className = 'product-card';
-                card.innerHTML = `
-                    <div class="product-image-container">
-                        ${p.badge ? `<span class="product-tag ${p.badge.includes('%') || p.badge === 'Sale' ? 'tag-accent' : 'tag-dark'}">${p.badge}</span>` : ''}
-                        <button class="fav-btn" aria-label="Favorite"><i class="far fa-heart"></i></button>
-                        <img src="${p.img}" alt="${p.title}" loading="lazy">
+                const el = document.createElement('article');
+                el.className = 'product-card';
+                el.innerHTML = `
+                    <div class="product-media">
+                        ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
+                        <img src="${p.img}" alt="${p.title}" loading="lazy" />
                     </div>
-                    <div class="product-info">
-                        <div class="category-name">${p.category}</div>
+                    <div class="product-details">
+                        <span class="product-cat mono">${p.category}</span>
                         <h3 class="product-title">${p.title}</h3>
-                        <div class="product-rating">
-                            ${'<i class="fas fa-star"></i>'.repeat(Math.floor(p.rating))}
-                            <span>(${p.reviews})</span>
-                        </div>
                         <div class="product-footer">
-                            <div class="price-col">
-                                <span class="price-now">$${p.price.toLocaleString()}</span>
-                                ${p.oldPrice ? `<span class="price-then">$${p.oldPrice.toLocaleString()}</span>` : ''}
-                            </div>
-                            <button class="add-cart-btn" onclick="addToBag(${p.id})">
-                                <i class="fas fa-plus"></i> Add
+                            <span class="product-price mono">$${p.price.toLocaleString()}</span>
+                            <button class="btn-add" onclick="addToBag(${p.id})" aria-label="Add to cart">
+                                <i class="fas fa-plus"></i>
                             </button>
                         </div>
                     </div>
                 `;
-                productsGrid.appendChild(card);
+                productContainer.appendChild(el);
             });
         }
 
-        // Cart Logic
         function addToBag(id) {
-            const product = PRODUCTS.find(p => p.id === id);
-            if (!product) return;
-            cart.push(product);
+            const item = PRODUCTS.find(x => x.id === id);
+            if (!item) return;
+            const existing = cart.find(x => x.id === id);
+            if (existing) {
+                existing.qty++;
+            } else {
+                cart.push({ ...item, qty: 1 });
+            }
             updateCart();
-            openCart();
+            openDrawer();
+        }
+
+        function changeQty(id, delta) {
+            const item = cart.find(x => x.id === id);
+            if (!item) return;
+            item.qty += delta;
+            if (item.qty <= 0) {
+                cart = cart.filter(x => x.id !== id);
+            }
+            updateCart();
         }
 
         function updateCart() {
-            cartBadge.textContent = cart.length;
+            const count = cart.reduce((acc, cur) => acc + cur.qty, 0);
+            cartCounter.textContent = count;
+
             if (cart.length === 0) {
-                cartItemsList.innerHTML = '<p style="color:var(--muted); font-size:14px; text-align:center; margin-top:40px;">Your bag is currently empty.</p>';
-                cartTotalSum.textContent = '$0.00';
+                drawerItems.innerHTML = '<p style="color: var(--text-muted); font-size: 14px; text-align: center; margin-top: 48px;">Your bag is currently empty.</p>';
+                subtotalVal.textContent = '$0.00';
                 return;
             }
 
-            cartItemsList.innerHTML = '';
+            drawerItems.innerHTML = '';
             let total = 0;
-            cart.forEach((item, index) => {
-                total += item.price;
+            cart.forEach(item => {
+                total += item.price * item.qty;
                 const row = document.createElement('div');
-                row.className = 'cart-item';
+                row.className = 'cart-row';
                 row.innerHTML = `
                     <img src="${item.img}" alt="${item.title}">
-                    <div style="flex:1;">
-                        <div class="cart-item-title">${item.title}</div>
-                        <div class="cart-item-price">$${item.price.toLocaleString()}</div>
+                    <div style="flex: 1;">
+                        <div style="font-size: 13px; font-weight: 700;">${item.title}</div>
+                        <div style="font-size: 12px; color: var(--text-muted);">$${item.price} each</div>
+                        <div class="cart-qty-ctrl">
+                            <button class="qty-btn" onclick="changeQty(${item.id}, -1)">-</button>
+                            <span class="mono">${item.qty}</span>
+                            <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+                        </div>
                     </div>
-                    <button class="action-btn" style="width:30px; height:30px; border-radius:6px;" onclick="removeFromBag(${index})">
-                        <i class="fas fa-trash" style="font-size:11px;"></i>
-                    </button>
                 `;
-                cartItemsList.appendChild(row);
+                drawerItems.appendChild(row);
             });
-            cartTotalSum.textContent = `$${total.toLocaleString()}.00`;
+            subtotalVal.textContent = `$${total.toLocaleString()}.00`;
         }
 
-        function removeFromBag(index) {
-            cart.splice(index, 1);
-            updateCart();
+        function openDrawer() {
+            cartDrawer.classList.add('open');
+            drawerOverlay.classList.add('open');
         }
 
-        function openCart() {
-            cartDrawer.classList.add('active');
-            cartOverlay.classList.add('active');
+        function closeDrawer() {
+            cartDrawer.classList.remove('open');
+            drawerOverlay.classList.remove('open');
         }
 
-        function closeCart() {
-            cartDrawer.classList.remove('active');
-            cartOverlay.classList.remove('active');
-        }
+        document.getElementById('openDrawerBtn').addEventListener('click', openDrawer);
+        document.getElementById('closeDrawerBtn').addEventListener('click', closeDrawer);
+        drawerOverlay.addEventListener('click', closeDrawer);
 
-        document.getElementById('openCartBtn').addEventListener('click', openCart);
-        document.getElementById('closeCartBtn').addEventListener('click', closeCart);
-        cartOverlay.addEventListener('click', closeCart);
-
-        // Filter Logic
-        document.querySelectorAll('.filter-chip').forEach(btn => {
+        // Filters
+        document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                const type = btn.dataset.filter;
-                displayProducts(type === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.category === type));
+                const cat = btn.dataset.filter;
+                renderProducts(cat === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.category === cat));
             });
         });
 
-        // Search Input
-        document.getElementById('productSearch').addEventListener('input', (e) => {
+        // Search
+        document.getElementById('searchInput').addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase().trim();
-            displayProducts(PRODUCTS.filter(p => p.title.toLowerCase().includes(query) || p.category.toLowerCase().includes(query)));
+            renderProducts(PRODUCTS.filter(p => p.title.toLowerCase().includes(query) || p.category.toLowerCase().includes(query)));
         });
 
-        // Hero Scroll
-        document.getElementById('heroShopBtn').addEventListener('click', () => {
-            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('heroScrollBtn').addEventListener('click', () => {
+            document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
         });
 
-        // Deal Button
-        document.getElementById('dealBuyBtn').addEventListener('click', () => {
-            cart.push({ id: 99, title: 'MacBook Pro 14" M3 Pro', price: 1799, img: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=600&q=80' });
-            updateCart();
-            openCart();
-        });
-
-        // Initial Load
-        displayProducts(PRODUCTS);
-        document.getElementById('yearVal').textContent = new Date().getFullYear();
+        renderProducts(PRODUCTS);
+        document.getElementById('yearSpan').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
